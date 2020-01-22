@@ -1,0 +1,38 @@
+---
+
+# Wich web service should be installed? choose 1
+# httpd - Standard
+# nginx
+webService: httpd
+webServicePort: 80
+webServiceSecurePort: 443
+
+# Turn of server signatures?
+webServiceSignatures: true
+
+## APACHE ##
+# httpd.cond vallues
+apacheErrorLog: logs/error_log
+apacheAccessLog: logs/access_log
+
+# SSL specific conf settings
+apacheSecureErrorLog: logs/ssl_error_log
+apacheSecureAccessLog: logs/ssl_access_log
+
+# Standard options for apache
+apacheLogLevel: warn
+apacheUser: apache
+apacheGroup: apache
+apacheAdmin: root@localhost
+
+apacheConfLocationSSL: "/etc/httpd/conf.d/ssl.conf"
+apacheConfLocation: "/etc/httpd/conf/httpd.conf"
+############
+
+## NGINX ##
+# Nginx.conf vallues
+nginxErrorLog: /var/log/nginx/error.log
+nginxAccessLog: /var/log/nginx/access.log
+
+nginxConfLocation: /etc/nginx/nginx.conf
+###########

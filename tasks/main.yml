@@ -1,0 +1,14 @@
+---
+
+# Include checks task
+- import_tasks: checks.yml
+
+# httpd installation
+- import_tasks: httpd.yml
+  when:
+    - webService == "httpd" and nginxStatus.results|selectattr("yumstate", "match", "installed")|list|length == 0
+
+# Including nginx
+- import_tasks: nginx.yml
+  when:
+    - webService == "nginx" and httpdStatus.results|selectattr("yumstate", "match", "installed")|list|length == 0

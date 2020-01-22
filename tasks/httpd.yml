@@ -1,0 +1,45 @@
+---
+
+# Install httpd
+- name: Install items needed for HTTPD
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  loop:
+    - "httpd"
+    - "mod_ssl"
+  notify:
+    - httpdHandler
+
+# start httpd first
+- name: Ensure httpd is started for file generation
+  service:
+    name: httpd
+    state: started
+
+# Check if httpd.conf exists
+- name: Check file httpd.conf
+  stat:
+    path: "{{ apacheConfLocation }}"
+  register: apacheConfLocationStatus
+
+# Check if ssl.conf exists
+- name: Check file ssl.conf
+  stat:
+    path: "{{ apacheConfLocationSSL }}"
+  register: apacheConfLocationSSLStatus
+
+# place custom apache conf
+- name: Place custom httpd.conf
+  template:
+    dest: "{{ apacheConfLocation }}"
+    src: "{{ role_path }}/templates/httpd.conf.j2"
+  when: apacheConfLocationStatus.stat.exists
+
+# place custom ssl conf
+- name: Place custom ssl.conf
+  template:
+    dest: "{{ apacheConfLocationSSL }}"
+    src: "{{ role_path }}/templates/ssl.conf.j2"
+  when: apacheConfLocationSSLStatus.stat.exists

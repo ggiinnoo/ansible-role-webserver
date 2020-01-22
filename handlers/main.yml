@@ -1,0 +1,15 @@
+---
+
+# httpd handler
+- name: httpdHandler
+  service:
+    name: httpd
+    state: restarted
+    enabled: true
+
+# nginx handler
+- name: nginxHandler
+  service:
+    name: nginx
+    state: restarted
+    enabled: true
