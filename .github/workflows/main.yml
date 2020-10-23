@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         centos: ['centos7']
-        service: ['httpd'. 'nginx']
+        service: ['httpd', 'nginx']
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
