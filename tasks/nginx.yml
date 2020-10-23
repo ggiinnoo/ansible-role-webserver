@@ -29,4 +29,5 @@
   template:
     dest: "{{ nginxConfLocation }}"
     src: "{{ role_path }}/templates/nginx.conf.j2"
+    mode: 0644
   when: nginxConfLocationStatus.stat.exists

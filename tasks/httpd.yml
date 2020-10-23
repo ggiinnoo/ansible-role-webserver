@@ -35,6 +35,7 @@
   template:
     dest: "{{ apacheConfLocation }}"
     src: "{{ role_path }}/templates/httpd.conf.j2"
+    mode: 0644
   when: apacheConfLocationStatus.stat.exists
 
 # place custom ssl conf
@@ -42,4 +43,5 @@
   template:
     dest: "{{ apacheConfLocationSSL }}"
     src: "{{ role_path }}/templates/ssl.conf.j2"
+    mode: 0644
   when: apacheConfLocationSSLStatus.stat.exists
