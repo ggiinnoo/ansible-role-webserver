@@ -3,10 +3,9 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
-  options:
-    config-file: molecule/default/yaml-lint.yml
+lint: |
+  yamllint .
+  ansible-lint .
 platforms:
   - name: instance
     image: "docker.pkg.github.com/ggiinnoo/docker-ansible/${DOCKER_IMAGE:-centos7}:latest"
@@ -22,11 +21,10 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
-  log: true
   lint:
     name: ansible-lint
   playbooks:
-    converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
+    converge: ${DOCKER_SERVICE:-converge}.yml
 scenario:
   name: default
 verifier:

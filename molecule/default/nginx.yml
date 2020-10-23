@@ -5,3 +5,6 @@
 
   roles:
     - ansible-role-webserver
+
+  vars:
+    webService: "nginx"
