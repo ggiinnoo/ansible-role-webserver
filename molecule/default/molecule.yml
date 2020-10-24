@@ -9,8 +9,6 @@ lint: |
 platforms:
   - name: instance
     image: "ggiinnoo/docker-ansible:${DOCKER_IMAGE:-centos7}-latest"
-    registry:
-      url: docker.pkg.github.com
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
