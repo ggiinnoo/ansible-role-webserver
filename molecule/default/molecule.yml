@@ -8,12 +8,9 @@ lint: |
   ansible-lint .
 platforms:
   - name: instance
-    image: "docker.pkg.github.com/ggiinnoo/docker-ansible/${DOCKER_IMAGE:-centos7}:latest"
+    image: "ggiinnoo/docker-ansible:${DOCKER_IMAGE:-centos7}-latest"
     registry:
       url: docker.pkg.github.com
-      credentials:
-        username: ${DOCKER_USERNAME:-""}
-        password: ${DOCKER_PASSWORD:-""}
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
