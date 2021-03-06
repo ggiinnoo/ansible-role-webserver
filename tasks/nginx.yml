@@ -8,7 +8,6 @@
     update_cache: true
   loop:
     - "nginx"
-    - "mod_ssl"
   notify:
     - nginxHandler
 
