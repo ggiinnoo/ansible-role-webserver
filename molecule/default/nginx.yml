@@ -7,4 +7,4 @@
     webService: "nginx"
 
   roles:
-    - ggiinnoo.webserver
+    - ansible-role-webserver

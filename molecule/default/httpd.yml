@@ -7,4 +7,4 @@
     webService: "httpd"
 
   roles:
-    - ggiinnoo.webserver
+    - ansible-role-webserver
