@@ -19,7 +19,7 @@ provisioner:
   lint:
     name: ansible-lint
   playbooks:
-    converge: ${DOCKER_SERVICE:-converge}.yml
+    converge: ${DOCKER_SERVICE:-httpd}.yml
 scenario:
   name: default
 verifier:

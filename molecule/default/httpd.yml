@@ -3,8 +3,8 @@
   hosts: all
   become: true
 
-  roles:
-    - ansible-role-webserver
-
   vars:
     webService: "httpd"
+
+  roles:
+    - ansible-role-webserver
