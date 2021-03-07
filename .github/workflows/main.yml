@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build for centos
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         centos: ['centos7', 'centos8']
