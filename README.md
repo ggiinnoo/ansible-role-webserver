@@ -1,7 +1,5 @@
-![ggiinnoo.webserver](https://github.com/ggiinnoo/ansible-role-webserver/workflows/Ansible%20role%20webserver/badge.svg)Setup webserver (nginx | httpd)
+![ggiinnoo.webserver](https://github.com/ggiinnoo/ansible-role-webserver/workflows/Ansible%20role%20webserver/badge.svg) Setup webserver (nginx | httpd)
 =========
-
-![ggiinnoo.webserver](https://github.com/ggiinnoo/ansible-role-webserver/workflows/Ansible%20role%20webserver/badge.svg)
 
 This playbook allows you to configure and httpd or nginx web server.
 If you require some vhost's take a look at my other ansible role's.
