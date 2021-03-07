@@ -1,4 +1,4 @@
-Setup webserver (nginx | httpd)
+![ggiinnoo.webserver](https://github.com/ggiinnoo/ansible-role-webserver/workflows/Ansible%20role%20webserver/badge.svg)Setup webserver (nginx | httpd)
 =========
 
 ![ggiinnoo.webserver](https://github.com/ggiinnoo/ansible-role-webserver/workflows/Ansible%20role%20webserver/badge.svg)
