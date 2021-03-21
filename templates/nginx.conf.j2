@@ -31,6 +31,9 @@ http {
 
     include /etc/nginx/conf.d/*.conf;
 
+    # Increase this number for more aliases in a vhost config
+    server_names_hash_bucket_size  256;
+
     server {
 	listen       {{ webServicePort }} default_server;
         listen       [::]:{{ webServicePort }} default_server;
