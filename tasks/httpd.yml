@@ -21,27 +21,27 @@
 # Check if httpd.conf exists
 - name: Check file httpd.conf
   stat:
-    path: "{{ apacheConfLocation }}"
+    path: "{{ apacheConfLocationDest }}"
   register: apacheConfLocationStatus
 
 # Check if ssl.conf exists
 - name: Check file ssl.conf
   stat:
-    path: "{{ apacheConfLocationSSL }}"
+    path: "{{ apacheConfLocationSSLDest }}"
   register: apacheConfLocationSSLStatus
 
 # place custom apache conf
 - name: Place custom httpd.conf
   template:
-    dest: "{{ apacheConfLocation }}"
-    src: "{{ role_path }}/templates/httpd.conf.j2"
+    dest: "{{ apacheConfLocationDest }}"
+    src: "{{ apacheConfLocationSrc }}"
     mode: 0644
   when: apacheConfLocationStatus.stat.exists
 
 # place custom ssl conf
 - name: Place custom ssl.conf
   template:
-    dest: "{{ apacheConfLocationSSL }}"
-    src: "{{ role_path }}/templates/ssl.conf.j2"
+    dest: "{{ apacheConfLocationSSLDest }}"
+    src: "{{ apacheConfLocationSSLSrc }}"
     mode: 0644
   when: apacheConfLocationSSLStatus.stat.exists

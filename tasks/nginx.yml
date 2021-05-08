@@ -20,13 +20,13 @@
 # Check if nginx config exists
 - name: Check file nginx.conf
   stat:
-    path: "{{ nginxConfLocation }}"
+    path: "{{ nginxConfLocationDest }}"
   register: nginxConfLocationStatus
 
 # place custom nginx conf
 - name: Place custom nginx.conf
   template:
-    dest: "{{ nginxConfLocation }}"
-    src: "{{ role_path }}/templates/nginx.conf.j2"
+    dest: "{{ nginxConfLocationDest }}"
+    src: "{{ nginxConfLocationSrc }}"
     mode: 0644
   when: nginxConfLocationStatus.stat.exists
